@@ -1,0 +1,214 @@
+:root {
+    --aboutme: #2F435A;
+    --papers: #464033;
+    --experiencehbs: #7E7C73;
+    --hobbiesBlgs: #D8D7D5;
+    --contact: #BBC4C2;
+    --black: #303030;
+}
+
+.container {
+    height: 160vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr 0.1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-areas: "topnav topnav topnav topnav" "aboutme info info info" "pubs pubs pubs pubs" "paper1 paper2 paper3 paper4" "paper5 paper6 paper7 paper8" "experience experience hobbies hobbies" "blogs blogs blogs blogs" "contact contact contact contact";
+    grid-gap: 0.3rem;
+    background-color: black;
+}
+
+.headerbg {
+    background-color: rgba(0, 0, 0, 0.822);
+    padding: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold
+}
+
+nav {
+    background-color: rgba(78, 27, 218, 0.548);
+    grid-area: topnav;
+}
+
+#aboutme {
+    background-color: var(--aboutme);
+    grid-area: aboutme;
+}
+
+#info {
+    background-color: var(--aboutme);
+    grid-area: info;
+}
+
+#pubs {
+    grid-area: pubs;
+    background-color: black;
+}
+
+#paper1,
+#paper2,
+#paper3,
+#paper4,
+#paper5,
+#paper6,
+#paper7,
+#paper8 {
+    background-color: var(--papers);
+}
+
+#experience {
+    background-color: var(--experiencehbs);
+    grid-area: experience;
+}
+
+#hobbies {
+    background-color: var(--experiencehbs);
+    grid-area: hobbies;
+}
+
+#blogs {
+    background-color: var(--hobbiesBlgs);
+    grid-area: blogs;
+}
+
+#contact {
+    background-color: var(--contact);
+    grid-area: contact;
+}
+
+.textcolwhite {
+    color: white;
+    font-weight: bold;
+}
+
+.topnavclass {
+    overflow: visible;
+}
+
+.topnavclass a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnavclass a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnavclass a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.topnavclass .icon {
+    display: none;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #044a80;
+    color: white;
+}
+
+.padd {
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical-line {
+    height: 60px;
+    position: relative;
+    top: 5px;
+    padding-left: 5px;
+    border-right: 2px solid gray;
+}
+
+.contact-details {
+    padding-left: 15%;
+    width: 70%;
+    justify-content: space-around;
+    height: 50px;
+    padding-top: 2%;
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.3fr 1fr 1fr 0.1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+        grid-template-areas: "topnav topnav" "aboutme aboutme" "info info" "pubs pubs" "paper1 paper2" "paper3 paper4" "paper5 paper6" "paper7 paper8" "experience experience" "hobbies hobbies" "blogs blogs" "contact contact";
+    }
+    .topnavclass a:not(:first-child) {
+        display: none;
+    }
+    .topnavclass a.icon {
+        float: left;
+        display: block;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+        grid-template-areas: "topnav" "aboutme" "info" "pubs" "paper1" "paper2" "paper3" "paper4" "paper5" "paper6" "paper7" "paper8" "experience" "hobbies" "blogs" "contact";
+    }
+    .topnavclass a:not(:first-child) {
+        display: none;
+    }
+    .topnavclass a.icon {
+        float: left;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnavclass.responsive {
+        position: relative;
+    }
+    .topnavclass.responsive .icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .topnavclass.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
